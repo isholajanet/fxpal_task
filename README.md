@@ -1,7 +1,7 @@
 # Sample Application Documentation
 
 ## Introduction
-This document provides instructions for setting up and running the Application. The Sample Application is a basic transaction management system built using Nest.js and MongoDB.
+This document provides instructions for setting up and running the Application. The Application is a basic transaction management system built using Nest.js, grpc and mongodb.
 
 ## Prerequisites
 Before starting, ensure you have the following installed on your machine:
