@@ -1,7 +1,7 @@
 # Sample Application Documentation
 
 ## Introduction
-This document provides instructions for setting up and running the Sample Application. The Sample Application is a basic transaction management system built using Nest.js and MongoDB.
+This document provides instructions for setting up and running the Application. The Sample Application is a basic transaction management system built using Nest.js and MongoDB.
 
 ## Prerequisites
 Before starting, ensure you have the following installed on your machine:
@@ -11,7 +11,7 @@ Before starting, ensure you have the following installed on your machine:
 ## Installation
 1. Clone the repository from GitHub:
    ```
-   git clone https://github.com/your-username/sample-application.git
+   git clone https://github.com/isholajanet/fxpal_task.git
    ```
 2. Navigate to the project directory:
    ```
@@ -31,7 +31,7 @@ Before starting, ensure you have the following installed on your machine:
    ```
    mongod
    ```
-2. Create a new database named `sampledb`:
+2. Create a new database named `fintech`:
    ```
    use sampledb
    ```
@@ -54,11 +54,6 @@ Before starting, ensure you have the following installed on your machine:
   ```
 
 
-## Troubleshooting
-- If you encounter any issues during setup or usage, refer to the troubleshooting section in the README.md file or reach out to the project maintainers for support.
-
-## Example
-- An example of using the Sample Application to manage transactions is available in the `examples` directory.
 
 ## References
 - Nest.js documentation: [https://nestjs.com](https://nestjs.com)
@@ -66,4 +61,4 @@ Before starting, ensure you have the following installed on your machine:
 - GitHub repository: [https://github.com/your-username/sample-application](https://github.com/your-username/sample-application)
 
 ## Conclusion
-You have successfully set up and run the Sample Application. Refer to this documentation for guidance on usage and troubleshooting.
+You have successfully set up and run the Application. Refer to this documentation for guidance on usage and troubleshooting.
