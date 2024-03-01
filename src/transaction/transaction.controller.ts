@@ -5,6 +5,7 @@ import { CreateTransactionDto } from './dtos/create-transaction.dto';
 import { UpdateTransactionDto } from './dtos/update-transaction.dto';
 
 import { Query as ExpressQuery } from 'express-serve-static-core'
+import { ApiProperty } from '@nestjs/swagger';
 
 @Controller('transactions')
 export class TransactionController {
@@ -12,6 +13,7 @@ export class TransactionController {
     constructor(private transactionService: TransactionService){}
 
     @Get()
+    @ApiProperty()
     async getAllTransactions(@Query() query: ExpressQuery): Promise<Transaction[]> {
         try{
         return this.transactionService.findAll(query);
@@ -21,6 +23,7 @@ export class TransactionController {
     }
 
     @Post('transaction')
+    @ApiProperty()
     async createTransaction(@Body() transaction: CreateTransactionDto): Promise<Transaction>{
         try{
             return this.transactionService.create(transaction);
@@ -30,6 +33,7 @@ export class TransactionController {
     }
 
     @Get(':id')
+    @ApiProperty()
     async getTransactionById(
         @Param('id')
         id: string
@@ -42,6 +46,7 @@ export class TransactionController {
     }
 
     @Put(':id')
+    @ApiProperty()
     async updateTransaction(
         @Param('id') 
         id: string, 
@@ -58,6 +63,7 @@ export class TransactionController {
     }
 
     @Delete(':id')
+    @ApiProperty()
     async deleteTransactionById(
         @Param('id')
         id: string

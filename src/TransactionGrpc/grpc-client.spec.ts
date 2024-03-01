@@ -12,8 +12,7 @@ import {
 } from './transactions_pb';
 import { TransactionGrpcServiceClient } from './transactions_grpc_pb';
 
-// Initialize gRPC client
-const client = new TransactionGrpcServiceClient('127.0.0.1:50051', grpc.credentials.createInsecure());
+const client = new TransactionGrpcServiceClient('0.0.0.0:50051', grpc.credentials.createInsecure());
 
 describe('Transaction gRPC methods', () => {
   let transactionId: string;

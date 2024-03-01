@@ -2,13 +2,16 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
+import { setupSwagger } from '../swagger/swagger'
+
 
 
 async function bootstrap() {
-  const protoDir = join(__dirname, 'TransactionGrpc');
-  const restApp = await NestFactory.create(AppModule);
+  const protoDir = join(__dirname, '..', 'TransactionGrpc');
+  const app = await NestFactory.create(AppModule);
+  setupSwagger(app);
 
-  restApp.connectMicroservice<MicroserviceOptions>(
+  app.connectMicroservice<MicroserviceOptions>(
     {
       transport: Transport.GRPC,
       options: {
@@ -19,9 +22,9 @@ async function bootstrap() {
     }
   );
 
-  await restApp.startAllMicroservices();
+  await app.startAllMicroservices();
 
-  await restApp.listen(3002);
+  await app.listen(3000);
 
 
 
