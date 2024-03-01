@@ -37,8 +37,8 @@ Before starting, ensure you have the following installed on your machine:
    use fintechdb
    ```
 
-    update the sample.env file to use your own mongodb url and change the name to .env
-   ```
+3. update the sample.env file to use your own mongodb url and change the name to .env
+   
 
 ## Running the Application
 1. Start the Nest.js server:
