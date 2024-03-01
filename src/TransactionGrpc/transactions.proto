@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package transactions;
+
+message Transaction {
+
+    enum Type {
+        DEPOSIT = 0;
+        WITHDRAWAL = 1;
+        TRANSFER = 2;
+    }
+
+    enum Status {
+        PENDING = 0;
+        COMPLETED = 1;
+        FAILED = 2;
+    }
+
+    string _id = 1;
+    double amount = 2;
+    string currency = 3;
+    Type type = 4;
+    string description = 5;
+    string recipientAccount = 6;
+    Status status = 7;
+    
+
+}
+
+service TransactionGrpcService{
+
+    rpc CreateTransaction(CreateTransactionRequest) returns (Transaction);
+    rpc GetTransaction(GetTransactionRequest) returns (Transaction);
+    rpc UpdateTransaction(UpdateTransactionRequest) returns (Transaction);
+    rpc DeleteTransaction(DeleteTransactionRequest) returns (DeleteTransactionResponse);
+
+
+}
+
+message CreateTransactionRequest{
+    Transaction transaction = 1;
+}
+
+message GetTransactionRequest {
+    string _id = 1;
+
+}
+
+message UpdateTransactionRequest {
+    Transaction transaction = 1;
+}
+
+message DeleteTransactionRequest {
+    string _id = 1;
+}
+
+message DeleteTransactionResponse {
+    bool success = 1;
+}
