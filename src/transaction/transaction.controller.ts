@@ -5,7 +5,7 @@ import { CreateTransactionDto } from './dtos/create-transaction.dto';
 import { UpdateTransactionDto } from './dtos/update-transaction.dto';
 
 import { Query as ExpressQuery } from 'express-serve-static-core'
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiParam, ApiProperty, ApiResponse } from '@nestjs/swagger';
 
 @Controller('transactions')
 export class TransactionController {
@@ -13,7 +13,8 @@ export class TransactionController {
     constructor(private transactionService: TransactionService){}
 
     @Get()
-    @ApiProperty()
+    @ApiOperation({ summary: 'Get all transactions' })
+    @ApiResponse({ status: 200, description: 'List of transactions', type: [Transaction] })
     async getAllTransactions(@Query() query: ExpressQuery): Promise<Transaction[]> {
         try{
         return this.transactionService.findAll(query);
@@ -23,7 +24,8 @@ export class TransactionController {
     }
 
     @Post('transaction')
-    @ApiProperty()
+    @ApiOperation({ summary: 'Create a transaction' })
+    @ApiBody({ type: CreateTransactionDto })
     async createTransaction(@Body() transaction: CreateTransactionDto): Promise<Transaction>{
         try{
             return this.transactionService.create(transaction);
@@ -32,8 +34,11 @@ export class TransactionController {
         }
     }
 
+    @ApiOperation({ summary: 'Find transaction by ID' })
+    @ApiParam({ name: 'id', description: 'Transaction ID' })
+    @ApiResponse({ status: 200, description: 'Found transaction', type: Transaction })
+    @ApiResponse({ status: 404, description: 'Transaction not found' })
     @Get(':id')
-    @ApiProperty()
     async getTransactionById(
         @Param('id')
         id: string
@@ -46,7 +51,10 @@ export class TransactionController {
     }
 
     @Put(':id')
-    @ApiProperty()
+    @ApiOperation({ summary: 'Update a transaction' })
+    @ApiBody({ type: UpdateTransactionDto })
+    @ApiResponse({ status: 200, description: 'Updated transaction', type: Transaction })
+    @ApiResponse({ status: 404, description: 'Transaction not found' })
     async updateTransaction(
         @Param('id') 
         id: string, 
@@ -63,7 +71,10 @@ export class TransactionController {
     }
 
     @Delete(':id')
-    @ApiProperty()
+    @Delete(':id')
+    @ApiOperation({ summary: 'Delete a transaction by ID' })
+    @ApiResponse({ status: 200, description: 'Deleted transaction', type: Transaction })
+    @ApiResponse({ status: 404, description: 'Transaction not found' })
     async deleteTransactionById(
         @Param('id')
         id: string
@@ -74,4 +85,6 @@ export class TransactionController {
             throw new Error("Could not delete user with id: " +error.message);
         }
     }
+
+
 }

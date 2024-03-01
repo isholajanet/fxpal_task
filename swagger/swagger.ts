@@ -4,7 +4,7 @@ import { INestApplication } from '@nestjs/common';
 export function setupSwagger(app: INestApplication): void {
   const options = new DocumentBuilder()
     .setTitle('Technical Task')
-    .setDescription('a basic FinTech backend service that allows users to perform CRUD operations on their financial transactions.')
+    .setDescription('A basic FinTech backend service that allows users to perform CRUD operations on their financial transactions.')
     .setVersion('1.0')
     .build();
 
