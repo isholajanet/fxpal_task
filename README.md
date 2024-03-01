@@ -1,4 +1,4 @@
-# Sample Application Documentation
+# Fxpal_Task Application Documentation
 
 ## Introduction
 This document provides instructions for setting up and running the Application. The Application is a basic transaction management system built using Nest.js, grpc and mongodb.
