@@ -46,6 +46,14 @@ Before starting, ensure you have the following installed on your machine:
 
 3. The gRPC server will be running on port `50051`.
 
+4. The swagger endpoint will be running on port `http://localhost:3000/api/` (This will open the Swagger UI interface, where you can see a list of available endpoints, request/response schemas)
+
+## API Endpoints
+- GET /transactions: Get all transactions.
+- POST /transactions: Create a new transaction.
+- GET /transactions/{id}: Get a transaction by ID.
+- PUT /transactions/{id}: Update a transaction by ID.
+- DELETE /transactions/{id}: Delete a transaction by ID.
 
 ## Testing
 - Run tests using the following command:
