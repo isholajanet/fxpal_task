@@ -33,7 +33,7 @@ Before starting, ensure you have the following installed on your machine:
    ```
 2. Create a new database named `fintech`:
    ```
-   use sampledb
+   use fintechdb
    ```
 
 ## Running the Application
@@ -58,7 +58,8 @@ Before starting, ensure you have the following installed on your machine:
 ## References
 - Nest.js documentation: [https://nestjs.com](https://nestjs.com)
 - MongoDB documentation: [https://docs.mongodb.com](https://docs.mongodb.com)
-- GitHub repository: [https://github.com/your-username/sample-application](https://github.com/your-username/sample-application)
+- Grpc documentation: [https://grpc.io/docs/](https://grpc.io/docs/)
+- GitHub repository: [https://github.com/isholajanet/fxpal_task.git](https://github.com/isholajanet/fxpal_task.git)
 
 ## Conclusion
 You have successfully set up and run the Application. Refer to this documentation for guidance on usage and troubleshooting.
