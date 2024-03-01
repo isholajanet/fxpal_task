@@ -33,9 +33,11 @@ Before starting, ensure you have the following installed on your machine:
    ```
 2. Create a new database named `fintech`:
    ```
-   update the sample.env file to use your own mongodb url and change the name to .env
-   ```
+  
    use fintechdb
+   ```
+
+    update the sample.env file to use your own mongodb url and change the name to .env
    ```
 
 ## Running the Application
