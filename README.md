@@ -15,7 +15,7 @@ Before starting, ensure you have the following installed on your machine:
    ```
 2. Navigate to the project directory:
    ```
-   cd sample-application
+   cd fxpal_task
    ```
 3. Install dependencies:
    ```
@@ -24,7 +24,7 @@ Before starting, ensure you have the following installed on your machine:
 
 ## Configuration
 - Configure MongoDB connection settings in the `.env` file.
-- Optionally, adjust any other configuration settings in the `config.ts` file.
+
 
 ## Database Setup
 1. Start MongoDB service:
