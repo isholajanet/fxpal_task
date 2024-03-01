@@ -33,7 +33,6 @@ Before starting, ensure you have the following installed on your machine:
    ```
 2. Create a new database named `fintech`:
    ```
-  
    use fintechdb
    ```
 
