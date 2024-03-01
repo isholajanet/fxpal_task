@@ -1,6 +1,5 @@
 import { Controller, OnModuleInit } from "@nestjs/common";
 import { TransactionGrpcService } from "./transaction.grpc.service";
-import { CreateTransactionDto } from "src/transaction/dtos/create-transaction.dto";
 import { GrpcMethod } from "@nestjs/microservices";
 import { CreateTransactionRequest, DeleteTransactionRequest, DeleteTransactionResponse, GetTransactionRequest, UpdateTransactionRequest } from "./transaction.interface";
 import { Transaction } from "src/transaction/schemas/transaction.schema";
